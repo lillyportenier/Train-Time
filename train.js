@@ -16,6 +16,7 @@ var destination;
 var time;
 var frequency;
 
+
  $("#submit-button").on("click",function (event){
     event.preventDefault();
 
@@ -31,12 +32,24 @@ var frequency;
         destinationfb: destination,
         timefb: time,
         frequencyfb: frequency,
+        minutesfb: firebase.database.ServerValue.TIMESTAMP
+
     });
+
+    $("#name-input").val("");
+    $("#destination-input").val("");
+    $("#time-input").val("");
+    $("#frequency-input").val("");
+
     
 });
 database.ref().on("child_added", function(snapshot){
     var snap = snapshot.val();
 
+    var currentTime = moment();
+
+    
+    console.log(currentTime);
     console.log(snap.namefb);
     console.log(snap.destinationfb);
     console.log(snap.timefb);
@@ -44,6 +57,8 @@ database.ref().on("child_added", function(snapshot){
 
     $(".table").append("<tr><td>" + snap.namefb + "</td><td>" + snap.destinationfb + "</td><td>" +
     snap.timefb + "</td><td>" + snap.frequencyfb + "</td></tr>");
+
+
 
 })
 
