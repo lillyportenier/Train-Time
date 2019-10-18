@@ -42,6 +42,9 @@ database.ref().on("child_added", function(snapshot){
     console.log(snap.timefb);
     console.log(snap.frequencyfb);
 
+    $(".table").append("<tr><td>" + snap.namefb + "</td><td>" + snap.destinationfb + "</td><td>" +
+    snap.timefb + "</td><td>" + snap.frequencyfb + "</td></tr>");
+
 })
 
 
