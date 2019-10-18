@@ -16,7 +16,7 @@ var destination;
 var time;
 var frequency;
 
-$("#submit-button").on("click", function(event){
+ function submit(event){
     event.preventDefault();
 
     name = $("#name-input").val().trim();
@@ -24,11 +24,26 @@ $("#submit-button").on("click", function(event){
     time = $("#time-input").val().trim();
     frequency = $("#frequency-input").val().trim();
 
-    database.ref().push({
-        namefb: name,
-        destinationfb: destination,
-        timefb: time,
-        frequencyfb: frequency,
-    });
+    console.log(name);
+
+    // database.ref().push({
+    //     namefb: name,
+    //     destinationfb: destination,
+    //     timefb: time,
+    //     frequencyfb: frequency,
+    // });
     
-})
+};
+// database.ref().on("child")
+
+
+$(document).on("click", "#submit-button", function(event) {
+    event.preventDefault();
+    search(event);   
+   });
+
+$(document).keypress(function(event) {
+    if (event.keyCode == 13) {   
+        submit(event);   
+    }
+});
