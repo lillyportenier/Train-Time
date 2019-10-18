@@ -10,25 +10,52 @@
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
    
 </head>
+<style>
+    .jumbotron {
+        background-color: black; 
+        color: white; 
+        margin-right:35px; 
+        margin-left:35px; 
+        margin-top:20px; 
+        margin-bottom:0px; 
+        border-radius: 6px; 
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .card {
+        margin-right:35px; 
+        margin-left:35px; 
+        margin-top:20px;
+    }
+    .card-header {
+        background-color: grey; 
+        color: white;
+    }
+    .table {
+        margin-bottom: 0px;
+    }
+</style>
 <body>
-    <div class="jumbotron jumbotron-fluid" style="background-color: black; color: white; margin:20px; border-radius: 6px; text-align: center;">
+    <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">Anytime is Train Time </h1>
             <p class="lead">Choo Choo. Chee Chee.</p>
         </div>
     </div>
-    <div class="card" style="margin:20px;">
-        <h5 class="card-header" style="background-color: gray; color: white;">Current Train Schedule</h5>
+    <div class="card">
+        <h5 class="card-header">Current Train Schedule</h5>
         <div class="card-body">
             <table class="table">
                 <thead>
                     <tr>
-                    <th scope="col" style="border-top: white">Train Name</th>
-                    <th scope="col" style="border-top: white">Destination</th>
-                    <th scope="col" style="border-top: white">Frequency (min.)</th>
-                    <th scope="col" style="border-top: white">Next Arival</th>
-                    <th scope="col" style="border-top: white">Minutes Away</th>
+                    <th scope="col" style="border-top: white;padding-top: 0px;">Train Name</th>
+                    <th scope="col" style="border-top: white;padding-top: 0px">Destination</th>
+                    <th scope="col" style="border-top: white;padding-top: 0px">Frequency (min.)</th>
+                    <th scope="col" style="border-top: white;padding-top: 0px">Next Arival</th>
+                    <th scope="col" style="border-top: white;padding-top: 0px;">Minutes Away</th>
                     </tr>
+                    <!-- only inline styling would work to style the table elements -->
                 </thead>
                 <tbody>
                     
@@ -36,8 +63,8 @@
             </table>
         </div>
     </div>
-    <div class="card" style="margin:20px;">
-        <h5 class="card-header" style="background-color: grey; color: white;">Add Train</h5>
+    <div class="card">
+        <h5 class="card-header" >Add Train</h5>
         <div class="card-body">
             <form>
                 <div class="form-group">
