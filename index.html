@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Times</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid" style="background-color: black; color: white; margin:20px; border-radius: 6px; text-align: center;">
+        <div class="container">
+            <h1 class="display-4">Anytime is Train Time </h1>
+            <p class="lead">Choo Choo. Chee Chee.</p>
+        </div>
+    </div>
+    <div class="card" style="margin:20px;">
+        <h5 class="card-header" style="background-color: gray; color: white;">Current Train Schedule</h5>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col" style="border-top: white">Train Name</th>
+                    <th scope="col" style="border-top: white">Destination</th>
+                    <th scope="col" style="border-top: white">Frequency (min.)</th>
+                    <th scope="col" style="border-top: white">Next Arival</th>
+                    <th scope="col" style="border-top: white">Minutes Away</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card" style="margin:20px;">
+        <h5 class="card-header" style="background-color: grey; color: white;">Add Train</h5>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label style="font-weight: bold;">Train Name</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label style="font-weight: bold;">Destination</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                        <label style="font-weight: bold;">First Train Time (HH:mm - military time)</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label style="font-weight: bold;">Frequency (min.)</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+            </form>
+            
+
+            <button type="button" class="btn btn-dark" style="background-color: black">Submit</button>
+            
+        </div>
+    </div>
+    
+
+<script src="train.js"></script> 
+</body>
+</html>
