@@ -16,7 +16,7 @@ var destination;
 var time;
 var frequency;
 
- function submit(event){
+ $("#submit-button").on("click",function (event){
     event.preventDefault();
 
     name = $("#name-input").val().trim();
@@ -33,21 +33,25 @@ var frequency;
         frequencyfb: frequency,
     });
     
-};
+});
 database.ref().on("child_added", function(snapshot){
     var snap = snapshot.val();
 
     console.log(snap.namefb);
+    console.log(snap.destinationfb);
+    console.log(snap.timefb);
+    console.log(snap.frequencyfb);
+
 })
 
 
-$(document).on("click", "#submit-button", function(event) {
-    event.preventDefault();
-    search(event);   
-   });
+// $(document).on("click", "#submit-button", function(event) {
+//     event.preventDefault();
+//     search(event);   
+//    });
 
-$(document).keypress(function(event) {
-    if (event.keyCode == 13) {   
-        submit(event);   
-    }
-});
+// $(document).keypress(function(event) {
+//     if (event.keyCode == 13) {   
+//         submit(event);   
+//     }
+// });
