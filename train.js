@@ -1,13 +1,13 @@
-var Config = {
-    apiKey: "AIzaSyBylhZQJQCK2L0Oix1UydONWusQtfPmHL8",
-    authDomain: "train-timer-4339a.firebaseapp.com",
-    databaseURL: "https://train-timer-4339a.firebaseio.com",
-    projectId: "train-timer-4339a",
-    storageBucket: "train-timer-4339a.appspot.com",
-    messagingSenderId: "218816803986",
-    appId: "1:218816803986:web:a6bf31a86096e5e597e24b"
+var config = {
+    apiKey: "AIzaSyDcWL8DBzsssPi4MsXg6w-5tRHfXopRnHw",
+    authDomain: "train-timer-cce42.firebaseapp.com",
+    databaseURL: "https://train-timer-cce42.firebaseio.com",
+    projectId: "train-timer-cce42",
+    storageBucket: "train-timer-cce42.appspot.com",
+    messagingSenderId: "555289134308",
+    appId: "1:555289134308:web:1f86683b1cf4bf066dd8f1"
   };
-  firebase.initializeApp(Config);
+  firebase.initializeApp(config);
 
   var database = firebase.database();
 
@@ -26,15 +26,19 @@ var frequency;
 
     console.log(name);
 
-    // database.ref().push({
-    //     namefb: name,
-    //     destinationfb: destination,
-    //     timefb: time,
-    //     frequencyfb: frequency,
-    // });
+    database.ref().push({
+        namefb: name,
+        destinationfb: destination,
+        timefb: time,
+        frequencyfb: frequency,
+    });
     
 };
-// database.ref().on("child")
+database.ref().on("child_added", function(snapshot){
+    var snap = snapshot.val();
+
+    console.log(snap.namefb);
+})
 
 
 $(document).on("click", "#submit-button", function(event) {
