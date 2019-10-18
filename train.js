@@ -13,10 +13,22 @@ var Config = {
 
 var name;
 var destination;
-var trainTime;
+var time;
 var frequency;
 
 $("#submit-button").on("click", function(event){
     event.preventDefault();
+
+    name = $("#name-input").val().trim();
+    destination = $("#destination-input").val().trim();
+    time = $("#time-input").val().trim();
+    frequency = $("#frequency-input").val().trim();
+
+    database.ref().push({
+        namefb: name,
+        destinationfb: destination,
+        timefb: time,
+        frequencyfb: frequency,
+    });
     
 })
