@@ -25,7 +25,7 @@ var frequency;
     time = $("#time-input").val().trim();
     frequency = $("#frequency-input").val().trim();
 
-    console.log(name);
+    // console.log(name);
 
     database.ref().push({
         namefb: name,
@@ -46,13 +46,16 @@ var frequency;
 database.ref().on("child_added", function(snapshot){
     var snap = snapshot.val();
     var trainFrequency = snap.frequencyfb;
+    console.log(trainFrequency)
+    var firstTime = snap.timefb;
 
-    var firstTimeConverted = moment(trainFrequency, "HH:mm").subtract(1, "years");
+
+    var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
 
     var currentTime = moment();
     console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
 
-    var diffTime =  moment().diff(moment(firstTimeConverted), "minutes");
+    var diffTime =  currentTime.diff(moment(firstTimeConverted), "minutes");
     console.log("DIFFRENCE IN TIME: " + diffTime);
 
     var tRemainder = diffTime % trainFrequency;
@@ -61,7 +64,7 @@ database.ref().on("child_added", function(snapshot){
     var tMinutesTillTrain = trainFrequency - tRemainder;
     console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
 
-    var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+    var nextTrain = moment(currentTime).add(tMinutesTillTrain, "minutes");
     console.log("ARIVAL TIME: " + moment(nextTrain).format("HH:mm"));
 
 
@@ -75,7 +78,7 @@ database.ref().on("child_added", function(snapshot){
     // console.log(snap.frequencyfb);
 
     $(".table").append("<tr><td>" + snap.namefb + "</td><td>" + snap.destinationfb + "</td><td>" +
-    snap.frequencyfb + "</td><td>" + moment(nextTrain).format("HH:mm") + "</td><td>" +  + "</td></tr>");
+    snap.frequencyfb + "</td><td>" + moment(nextTrain).format("HH:mm") + "</td><td>" + tMinutesTillTrain + "</td></tr>");
 
 
 
